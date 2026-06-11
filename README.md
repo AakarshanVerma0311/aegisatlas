@@ -1,23 +1,39 @@
 # AegisAtlas — Tourist Safety Platform
 
-Gamified, real-time civic safety platform where tourists earn XP while silently streaming GPS to authorities. Police watch a live heatmap. AI engine fires escalating alerts ending in one-click E-FIR.
+AegisAtlas is a hackathon-ready monorepo combining a tourist mobile app, authority dashboard, backend APIs, AI anomaly detection, and HTTPS deployment config.
 
-## Quick Start
+## Monorepo Layout
 
-See `/README.md` in each directory for setup instructions.
-
-## Project Structure
-
-```
-/aegisatlas
-  /app          → React Native (Expo) tourist app
-  /dashboard    → React 18 + react-leaflet authority dashboard
-  /backend      → Node.js + Express + Socket.IO server
-  /ai-engine    → Python 3.11 + FastAPI anomaly engine
-  /shared       → zones.geojson, constants.js, constants.py
-  /nginx        → nginx.conf + certbot-setup.sh
+```text
+/backend      Express + Socket.IO APIs and auth
+/ai-engine    FastAPI anomaly evaluator + escalation state machine
+/dashboard    React 18 authority dashboard
+/app          React Native Expo tourist app
+/nginx        TLS reverse proxy and certbot helper
+/shared       Cross-platform constants + zones
 ```
 
----
+## Security Defaults
 
-Hackathon Mentoring Round 1 Build
+- JWT expiries: tourist 8h, authority 12h
+- bcrypt cost: 12
+- Account lockout + auth rate limiting (10 requests/15 min)
+- Ping limiter (5/min) and global limiter
+- Helmet + CORS allowlist
+- Internal AI route guard via `x-internal-secret`
+- Expo `SecureStore` JWT storage
+- TLS 1.2/1.3 in nginx
+
+## Demo Sequence
+
+1. Start backend (`/backend`) with secure env values.
+2. Start AI engine (`/ai-engine`) and set matching `INTERNAL_SECRET`.
+3. Run dashboard (`/dashboard`) and login with `AAT-0001 / ChangeMe@123` (replace in production).
+4. Run tourist app (`/app`), register tourist, and grant GPS permission.
+5. Observe live pings on dashboard, click tourist name for 5-point breadcrumb zoom.
+6. Trigger panic in app to see real-time alert and auto draft E-FIR flow.
+7. Validate nginx TLS using `nginx/nginx.conf` + `certbot-setup.sh`.
+
+## Component Setup
+
+Refer to each component README for environment variables and local startup commands.
