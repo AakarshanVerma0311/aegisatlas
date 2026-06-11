@@ -1,0 +1,137 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "zone-safe-1",
+      "properties": {
+        "id": "zone-safe-1",
+        "name": "Heritage District",
+        "riskLevel": "safe",
+        "description": "Old city heritage area with monuments"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [72.8234, 19.0176],
+            [72.8245, 19.0176],
+            [72.8245, 19.0190],
+            [72.8234, 19.0190],
+            [72.8234, 19.0176]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zone-caution-1",
+      "properties": {
+        "id": "zone-caution-1",
+        "name": "Busy Market",
+        "riskLevel": "caution",
+        "description": "High-traffic market area, crowded during peak hours"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [72.8300, 19.0150],
+            [72.8320, 19.0150],
+            [72.8320, 19.0170],
+            [72.8300, 19.0170],
+            [72.8300, 19.0150]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zone-caution-2",
+      "properties": {
+        "id": "zone-caution-2",
+        "name": "Transit Hub",
+        "riskLevel": "caution",
+        "description": "Railway/bus station with moderate traffic"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [72.8150, 19.0250],
+            [72.8170, 19.0250],
+            [72.8170, 19.0270],
+            [72.8150, 19.0270],
+            [72.8150, 19.0250]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zone-restricted-1",
+      "properties": {
+        "id": "zone-restricted-1",
+        "name": "Construction Zone",
+        "riskLevel": "restricted",
+        "description": "Active construction area — off-limits to tourists"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [72.8350, 19.0100],
+            [72.8380, 19.0100],
+            [72.8380, 19.0130],
+            [72.8350, 19.0130],
+            [72.8350, 19.0100]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zone-restricted-2",
+      "properties": {
+        "id": "zone-restricted-2",
+        "name": "Industrial Area",
+        "riskLevel": "restricted",
+        "description": "Industrial zone with heavy vehicle traffic"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [72.8400, 19.0200],
+            [72.8430, 19.0200],
+            [72.8430, 19.0230],
+            [72.8400, 19.0230],
+            [72.8400, 19.0200]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zone-safe-2",
+      "properties": {
+        "id": "zone-safe-2",
+        "name": "Central Park",
+        "riskLevel": "safe",
+        "description": "Public park with police presence and facilities"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [72.8200, 19.0100],
+            [72.8220, 19.0100],
+            [72.8220, 19.0120],
+            [72.8200, 19.0120],
+            [72.8200, 19.0100]
+          ]
+        ]
+      }
+    }
+  ]
+}
